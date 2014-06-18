@@ -1,0 +1,73 @@
+/* Main Menu */
+
+{
+    "MenuStyle":
+    {
+        "float": "right",
+        "width": "205px",
+        "border": "1px solid #000",
+        "background-color": "#fff",
+        "margin-right": "10px"
+
+    },
+    "MenuItemStyle":
+    {
+        "line-height": "38px",
+        "text-align": "left",
+        "border-bottom": "1px solid #ddd",
+        "color": "#777"
+    },
+    "MenuItemHoverStyle":
+    {
+        "color": "#fff",
+        "background-color": "#0e3980",
+        "background-image": "url(\"../images/blue/menuSelected.png\")"
+    },
+    "Orientation": "vertical",
+    "panels":
+    [
+        {
+            "ID": "contacts",
+            "Text": "&nbsp;&nbsp;Contacts",
+            "Description": "Create and manage your contacts from here.<br />&nbsp;<br />&nbsp;"
+        },
+        {
+            "ID": "groups",
+            "Text": "&nbsp;&nbsp;Groups",
+            "Description": "Create and manage groups and fill them with contacts from here.<br />&nbsp;<br />&nbsp;"
+        },
+        {
+            "ID": "email",
+            "Text": "&nbsp;&nbsp;Send Email",
+            "Description": "Send an email to groups of people by Mail Codes.<br />&nbsp;<br />&nbsp;"
+        },
+        {
+            "ID": "codes",
+            "Text": "&nbsp;&nbsp;Other",
+            "Description": "Manage system codes here.<br />&nbsp;<br />&nbsp;<br />&nbsp;",
+            "panels":
+            [
+                {
+                    "ID": "users",
+                    "Text": "&nbsp;&nbsp;Account Administrators",
+                    "Description": "Create and manage Account Administrators from here."
+                },
+                {
+                    "ID": "status",
+                    "Text": "&nbsp;&nbsp;Status",
+                    "Description": "Create and manage Status Choices from here."
+                },
+                {
+                    "ID": "mailCodes",
+                    "Text": "&nbsp;&nbsp;Mail Codes",
+                    "Description": "Create and manage Mail Codes from here."
+                },
+                {
+                    "ID": "areas",
+                    "Text": "&nbsp;&nbsp;Areas",
+                    "Description": "Create and manage Areas from here."
+                }
+            ]
+        }
+    ]
+}

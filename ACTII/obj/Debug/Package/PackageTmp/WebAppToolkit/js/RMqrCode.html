@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<!--[if IE]><script type='text/javascript' src='excanvas.js'></script><![endif]-->
+<script type='text/javascript' src='RMqrCode.js'></script>
+
+<style type="text/css">
+  html { width:100%; height: 100% }
+  body { width:100%; height: 100%; margin: 0px; padding: 0px }
+  div#qrdiv {width:200px; height:200px}
+</style>
+
+<script type="text/javascript">
+
+// Cross Browser Ajax Implementation
+if(typeof window.XMLHttpRequest !== 'function' &&
+    typeof window.ActiveXObject === 'function') {
+    window.XMLHttpRequest = function() {
+        try { return new ActiveXObject('Msxml2.XMLHTTP.6.0'); } catch(e) {}
+        try { return new ActiveXObject('Msxml2.XMLHTTP.3.0'); } catch(e) {}
+        try { return new ActiveXObject('Msxml2.XMLHTTP'); } catch(e) {}
+        try { return new ActiveXObject('Microsoft.XMLHTTP'); } catch(e) {}
+        throw new Error('failed to create an ActiveX XMLHTTP object');
+    };
+}
+
+function createCORSRequest(method, url){
+    var xhr = new XMLHttpRequest();
+    if ("withCredentials" in xhr){
+        xhr.open(method, url, true);
+    } else if (typeof XDomainRequest != "undefined"){
+        xhr = new XDomainRequest();
+        //alert(url);
+        xhr.open(method, url);
+    } else {
+        xhr = null;
+    }
+    if(xhr) {
+        xhr.send();
+    }
+    return xhr;
+}
+
+function createCORSRequestB(method, url){
+
+	var response =  {
+	        "ticker":
+            {
+                "high":7.59916,
+                "low":6.402,
+                "avg":6.889553158,
+                "vwap":6.95509929,
+                "vol":54005,
+                "last":7.13121,
+                "buy":7.13121,
+                "sell":7.1394
+            }
+    }
+    
+    return response;
+}
+
+
+var BTCRate = createCORSRequestB('GET','https://mtgox.com/api/0/data/ticker.php').ticker.avg;
+
+function loadJSON(url, request) {
+    try {
+        req = new XMLHttpRequest();
+        req.open("POST", url, false);
+        req.send(request);
+        if(req) {
+            return(jsonParse(req.responseText));
+        }
+    } catch(e){alert("We were unable to process your request at this time.\r\nPlease try again later.\r\n\r\n"+url+"\r\n"+e);}
+}
+
+</script>
+</head>
+<body>
+<div id="qrdiv" style="background:lightgray; position:absolute; width:360px; height:360px">
+  <form name="qrinp">
+    <input type='hidden' name="btaddr" id="btaddr" value='1LMTaaNB81XVxtmaHYgQyqoYgsXuuy2c5P' />
+    USD Amount: $<input type='text' name="amt" id="amt" size='5' value='' onkeyup="document.getElementById('BTC').innerText=(Math.round((document.getElementById('amt').value / BTCRate) * 10000) / 10000);document.getElementById('theDiv').setAttribute('amount',(Math.round((document.getElementById('amt').value / BTCRate) * 10000) / 10000));" />&nbsp;&nbsp;BTC: <span id='BTC'></span><br />
+<!--    USD Amount: $<input type='text' name="amt" id="amt" size='5' value='' onkeyup="document.getElementById('BTC').innerText=(Math.round((document.getElementById('amt').value / BTCRate) * 10000) / 10000);document.getElementById('theDiv').setAttribute('qrCode','bitcoin:'+getElementById('btaddr').value+'?amount='+(Math.round((document.getElementById('amt').value / BTCRate) * 10000) / 10000)+'X8&label=Ninos%20Pizza');">&nbsp;&nbsp;BTC: <span id='BTC'></span><br /> -->
+<!--        <input type="button" value="Request Funds" onclick=""/> -->
+
+  </form>
+    <div id='theDiv' btaddr='1LMTaaNB81XVxtmaHYgQyqoYgsXuuy2c5P' label="Nino's Pizza" qrData='bitcoin:[uri btaddr]?amount=[uri amount]X8&label=[uri label]' size='300' />
+</div>
+</body>
+</html>

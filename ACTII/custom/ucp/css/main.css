@@ -1,0 +1,181 @@
+#headerGraphic { 
+	height:149px;
+	line-height:149px;
+	padding-top:0px;
+	background-image: url('../images/blue/headerbgs1.jpg');
+	background-repeat: no-repeat;
+	color:#ccc;
+
+	}
+	
+header { 
+	background:#fff url('../images/blue/bodybg2s1.jpg') repeat-x;
+	}
+
+
+.auditArea {
+    border:1px solid #ddd;
+    padding: 5px;
+}
+.auditArea div {
+    float: right;
+}
+
+/******************************************/
+/* All Pages                              */
+/******************************************/
+.panel {
+    padding-left: 220px;    /* This is only here to make room for the menu in this app */
+}
+
+/******************************************/
+/* Custom Look and Feel                   */
+/******************************************/
+/** element defaults **/
+table {
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:left;
+}
+th, td {
+	padding:5px 10px;
+}
+th {
+	color:#fff;
+	border-top:3px solid #082659;
+	background-color:#0C3A87;
+}
+td {
+	border-bottom:1px solid #f4f4f4;
+}
+code, blockquote {
+	display:block;
+	border-left:5px solid #ddd;
+	padding:10px;
+	margin-bottom:20px;
+}
+blockquote p {
+	font-style:italic;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	margin:0;
+	height: 1%;
+}
+p {
+	line-height:1.9em;
+	margin-bottom:20px;
+}
+a {
+	color:#0D3C84;
+}
+a:hover {
+	color:#0C3A85;
+}
+a:focus {
+	outline:none;
+}
+fieldset {
+	display:block;
+	border:none;
+	border-top:1px solid #e0e0e0;
+}
+fieldset legend {
+	font-weight:bold;
+	font-size:13px;
+	padding-right:10px;
+	color:#222;
+}
+fieldset form {
+	padding-top:15px;
+	padding-bottom:15px;
+}
+fieldset p label {
+	float:left;
+	width:150px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.field-select, .field-textarea, .field-text, .field-button {
+	padding:5px;
+	color:#333333;
+	font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;
+	border:1px solid #ddd;
+}
+.field-select {
+	padding:4px;
+	color:#333333;
+	font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;
+	border:1px solid #ddd;
+}
+/* Blackberry does not understand onclick for a button,
+    so it has to be a link */
+
+.field-button {
+	background:#0C3A87;
+	border:none;
+	border-bottom:3px solid #082659;
+	color:#ffffff;
+}
+
+h1 {
+	font-size:45px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+h2 {
+	color:#061C41;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:30px;
+	font-weight:bold;
+	letter-spacing:-2px;
+	padding:0 0 5px;
+	margin:0;
+}
+h3 {
+	font-family:Arial,Helvetica,sans-serif;
+	color:#0D357B;
+	font-size:20px;
+	padding-bottom:10px;
+}
+h4 {
+	font-family:Arial,Helvetica,sans-serif;
+	padding-bottom:10px;
+	font-size:15px;
+	color:#0C3A85;
+}
+h5 {
+	padding-bottom:10px;
+	font-size:13px;
+	color:#666666;
+}
+ul, ol {
+	margin: 0px 0px 5px 20px;
+}
+li {
+	padding-bottom:5px;
+}
+
+.sectionHeader {
+	font-family:Arial,Helvetica,sans-serif;
+	color:#0D357B;
+	font-size:20px;
+
+    border-bottom:1px solid #a4a4a4;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.infoBox {
+     color: #cccccc;
+     border-color: #08275a;
+}
+
+.infoBoxHeading {
+    background-color: #0d3e8f; 
+    
+}
+
+.infoBoxDetail {
+    background-color: #2e60b1; 
+}
+

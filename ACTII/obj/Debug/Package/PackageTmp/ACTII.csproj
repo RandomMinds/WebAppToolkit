@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07D24EAC-03A3-49FC-9E3D-86E225658DBF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACTII</RootNamespace>
+    <AssemblyName>ACTII</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="config.xml" />
+    <Content Include="custom\cc\css\main.css" />
+    <Content Include="custom\cc\images\blue\bodybg2s1.jpg" />
+    <Content Include="custom\cc\images\blue\headerbgs1.jpg" />
+    <Content Include="custom\cc\images\blue\menuSelected.png" />
+    <Content Include="custom\cc\images\icons\aMap.png" />
+    <Content Include="custom\cc\images\icons\aPhone.png" />
+    <Content Include="custom\cc\images\icons\logo.png" />
+    <Content Include="custom\cc\images\icons\logo72.png" />
+    <Content Include="custom\cc\images\icons\logoA.png" />
+    <Content Include="custom\cc\images\icons\Map.png" />
+    <Content Include="custom\cc\images\icons\Phone.png" />
+    <Content Include="custom\cc\images\logo.png" />
+    <Content Include="custom\cc\images\logosmall.png" />
+    <None Include="custom\cc\services\mainMenu.json" />
+    <Content Include="custom\pvsp\css\main.css" />
+    <Content Include="custom\pvsp\images\blue\bodybg2s1.jpg" />
+    <Content Include="custom\pvsp\images\blue\headerbgs1.jpg" />
+    <Content Include="custom\pvsp\images\blue\menuSelected.png" />
+    <Content Include="custom\pvsp\images\icons\aMap.png" />
+    <Content Include="custom\pvsp\images\icons\aPhone.png" />
+    <Content Include="custom\pvsp\images\icons\logo.png" />
+    <Content Include="custom\pvsp\images\icons\logo72.png" />
+    <Content Include="custom\pvsp\images\icons\logoA.png" />
+    <Content Include="custom\pvsp\images\icons\Map.png" />
+    <Content Include="custom\pvsp\images\icons\Phone.png" />
+    <Content Include="custom\pvsp\images\logo.png" />
+    <Content Include="custom\pvsp\images\logosmall.png" />
+    <Content Include="custom\pvsp\js\config.js" />
+    <Content Include="custom\images\blue\bodybg2s1.jpg" />
+    <Content Include="custom\images\blue\headerbgs1.jpg" />
+    <Content Include="custom\images\blue\menuSelected.png" />
+    <Content Include="custom\images\icons\aMap.png" />
+    <Content Include="custom\images\icons\aPhone.png" />
+    <Content Include="custom\images\icons\logo.png" />
+    <Content Include="custom\images\icons\logo72.png" />
+    <Content Include="custom\images\icons\logoA.png" />
+    <Content Include="custom\images\icons\Map.png" />
+    <Content Include="custom\images\icons\Phone.png" />
+    <Content Include="custom\images\logo.png" />
+    <Content Include="custom\images\logosmall.png" />
+    <Content Include="custom\cc\js\config.js" />
+    <Content Include="custom\js\configACTII.js" />
+    <Content Include="custom\js\configUCP.js" />
+    <Content Include="custom\js\main.js" />
+    <Content Include="custom\pvsp\services\checkDupes\default.aspx" />
+    <Content Include="custom\services\appDef\default.aspx" />
+    <Content Include="custom\ucp\css\main.css" />
+    <Content Include="custom\ucp\images\blue\bodybg2s1.jpg" />
+    <Content Include="custom\ucp\images\blue\headerbgs1.jpg" />
+    <Content Include="custom\ucp\images\blue\menuSelected.png" />
+    <Content Include="custom\ucp\images\icons\aMap.png" />
+    <Content Include="custom\ucp\images\icons\aPhone.png" />
+    <Content Include="custom\ucp\images\icons\logo.png" />
+    <Content Include="custom\ucp\images\icons\logo72.png" />
+    <Content Include="custom\ucp\images\icons\logoA.png" />
+    <Content Include="custom\ucp\images\icons\Map.png" />
+    <Content Include="custom\ucp\images\icons\Phone.png" />
+    <Content Include="custom\ucp\images\logo.png" />
+    <Content Include="custom\ucp\images\logosmall.png" />
+    <Content Include="custom\ucp\js\config.js" />
+    <Content Include="FULL.html" />
+    <Content Include="gpl.txt" />
+    <Content Include="index.html" />
+    <Content Include="lgpl.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebAppToolkit\css\baseline.css" />
+    <Content Include="WebAppToolkit\css\InputMask.css" />
+    <Content Include="WebAppToolkit\css\RMMenu.css" />
+    <Content Include="WebAppToolkit\css\simplecontextmenu.css" />
+    <Content Include="WebAppToolkit\css\tooltip.css" />
+    <Content Include="WebAppToolkit\js\baseline.js" />
+    <Content Include="WebAppToolkit\js\css3-mediaqueries.js" />
+    <Content Include="WebAppToolkit\js\excanvas.js" />
+    <Content Include="WebAppToolkit\js\InputMask.html" />
+    <Content Include="WebAppToolkit\js\InputMask.js" />
+    <Content Include="WebAppToolkit\js\simplecontextmenu.js" />
+    <Content Include="WebAppToolkit\js\stacktrace.js" />
+    <Content Include="WebAppToolkit\js\tooltip.js" />
+    <Content Include="WebAppToolkit\js\RMMenu.html" />
+    <Content Include="WebAppToolkit\js\RMMenu.js" />
+    <Content Include="WebAppToolkit\js\RMqrCode.html" />
+    <Content Include="WebAppToolkit\js\RMqrCode.js" />
+    <Content Include="WebAppToolkit\js\WebAppToolkit.js" />
+    <Content Include="WebAppToolkit\services\catchAll\default.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="custom\pvsp\services\checkDupes\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="custom\pvsp\services\checkDupes\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="custom\services\appDef\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="custom\services\appDef\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAppToolkit\services\catchAll\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAppToolkit\services\catchAll\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAppToolkit\services\DataConnection.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebAppToolkit\services\Security.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="custom\css\" />
+    <Folder Include="custom\pvsp\services\miscUtils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="custom\cc\images\blue\Thumbs.db" />
+    <None Include="custom\cc\images\icons\Thumbs.db" />
+    <None Include="custom\cc\images\Thumbs.db" />
+    <None Include="custom\pvsp\images\blue\Thumbs.db" />
+    <None Include="custom\pvsp\images\icons\Thumbs.db" />
+    <None Include="custom\pvsp\images\Thumbs.db" />
+    <None Include="custom\images\blue\Thumbs.db" />
+    <None Include="custom\images\icons\Thumbs.db" />
+    <None Include="custom\images\Thumbs.db" />
+    <None Include="custom\ucp\images\blue\Thumbs.db" />
+    <None Include="custom\ucp\images\icons\Thumbs.db" />
+    <None Include="custom\ucp\images\Thumbs.db" />
+    <None Include="WebAppToolkit\cors1.php" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3025</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

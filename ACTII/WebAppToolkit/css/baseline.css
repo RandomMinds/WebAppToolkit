@@ -1,0 +1,425 @@
+/*
+Baseline - Baseline code for HTML applications.
+Copyright (C) 2009 by Gregory J Lamoree
+
+This file is part of the Web Application Toolkit. 
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/  
+
+/* Page-level */
+html, body { 
+	margin:0; 
+	padding:0; 
+	font-family: Helvetica, Arial, sans-serif; 
+	font-size:14px; 
+	height: 100%;
+	width: 100%;
+	max-width: device-width;
+	}
+	
+
+
+#mainPage {
+}
+/* Note: Make HTML 5 elements block-level for consistent styling */
+header, nav, article, footer, address { display:block; }
+
+nav {
+    z-index: 1;
+    position: absolute;
+    
+}
+
+/* Sections */
+header, footer { width:100%; clear:both; }
+
+header h1 {
+    font-size: 450%;
+    padding-left: .25em;
+}
+	
+footer { 
+	font-size:0.8em;
+	font-weight:bold; 
+	text-align:center; 
+	background:#ccc;
+	height:50px;
+	margin-top:25px; 
+	padding-top:20px;
+	vertical-align: bottom;
+	}
+
+article { 
+	border-bottom: 1px dashed gray; 
+	margin-bottom: 20px; 
+	}
+article p {
+    padding:10px; 
+} 
+
+* {
+	margin:0;
+	padding:0;
+}
+
+/** clear fix **/
+.clear:after {
+	content: " ";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clear {
+	display: inline-block;
+}
+.clear {
+	display: block;
+}
+
+.customInline {
+    display: inline;
+    display:-moz-inline-stack; 
+    display:inline-block; zoom:1; 
+    *display:inline;
+}
+
+.template {
+    display: none;
+}
+
+.collapseTree, .collapseTree li, .collapseTree a {
+    list-style: none;
+    margin-left: 0px;
+    padding-left: 0px;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 105%;
+    line-height: 1.5em;
+    cursor: pointer;
+}
+
+.pageMessage {
+    color: #CC0033;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    display: none;
+}
+
+
+/* Form Help */
+.fieldGroup {
+    float: left; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+    margin-bottom: 5px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.fieldGroupList {
+    float: left; 
+    display: table-cell;
+    margin-left: 10px; 
+    margin-right: 10px; 
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 96%;
+}
+
+.formBreak {
+    line-height: 2.5em;
+}
+
+.oneLine {
+    float: left; 
+    width: 100%;
+    clear: both;
+}
+
+.subGroupright div {
+    float: right;
+}
+.subGroupleft div {
+    float: left;
+}
+
+
+/* Mock Table Areas */
+.resultLine {
+    float: left;
+    margin: auto;
+    border-bottom:1px solid #e0e0e0; 
+	padding:10px 0px 10px 0px; 
+	cursor: pointer;
+    width: 100%;
+    clear: both;
+
+}
+
+.key {
+    font-weight: bold;
+    font-size: 102%;
+    xwhite-space: nowrap;
+    float: left;
+    cursor: pointer;
+    max-width: 90%;
+    height: 100%;
+}
+
+.detail {
+    font-weight: normal;
+    float: left;
+    padding-left: 20px;
+    xwhite-space: nowrap;
+    xoverflow: wrap;
+    cursor: pointer;
+    max-width: 90%;
+    height: 100%;
+    
+}
+
+.resultbox {
+    max-width: 90%;
+}
+
+.detail img {
+    border: none;
+}
+/*
+fieldset form input.formbutton, a.formbutton .button {
+ font-family: Helvetica ;
+ font-weight: bold ;
+ padding: 15px; 
+ border: 1px solid black ;
+ -moz-border-radius: 8px ;
+ -webkit-border-radius: 8px ; 
+ margin-top: 10px ;
+ margin-bottom: 10px ;
+ background-color: white ;
+}
+*/
+fieldset form input.formbutton, a.formbutton .button {
+    /* for browsers not supporting gradient without image */
+    background: #888800;
+    /* Mozilla Firefox: 
+    background: -moz-linear-gradient(top, #0000aa, #000000);*/
+    /* Chrome and Safari:*/
+    background: -webkit-gradient-webkit-gradient(linear, left top, left bottom, from(#ddd), to(#fafafa), color-stop(0.5, #fff), color-stop(0.6, #ddd), color-stop(0.95, #FFF)); 
+    /* Microsoft Internet Explorer 
+    filter: progid:DXImageTransform.Microsoft.Gradient(
+                StartColorStr='#0000aa', EndColorStr='#000000', GradientType=0);*/
+    -webkit-border-radius: 10px;
+    cursor: pointer;
+  }
+  
+
+#RMBLprogress {
+    -webkit-border-radius: 10px;
+    background-color: rgb(0,0,0);
+    filter: alpha(opacity=70);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    background-color: rgba(0,0,0,.7);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 80px;
+    left: 10%;
+    line-height: 80px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    width: 80%;
+    z-index: 10000;
+}
+
+#RMBLSaveSuccess {
+    -webkit-border-radius: 10px;
+    background-color: rgb(0,0,0);
+    filter: alpha(opacity=70);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    background-color: rgba(0,0,0,.7);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 80px;
+    left: 10%;
+    line-height: 80px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    width: 80%;
+    z-index: 10000;
+}
+
+#RMBLAccessDenied {
+    -webkit-border-radius: 10px;
+    background-color: red;
+    filter: alpha(opacity=70);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    background-color: rgba(255,0,0,.7);
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    height: 80px;
+    left: 10%;
+    line-height: 80px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    width: 80%;
+    z-index: 10000;
+}
+
+.field-select {
+}
+
+.field-textarea {
+}
+
+.field-text {
+}
+
+.field-button {
+	font-weight:bold;
+	padding:5px 10px;
+	font-size:13px;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.glossy-button {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(74,74,74,0.65)), color-stop(0.5, rgba(20,20,20,0.55)), color-stop(0.5, rgba(2,2,2,0.55)), to(rgba(14,14,14,0.55)));
+}
+
+
+
+.infoBox {
+    width: 250px; 
+    height: 200px; 
+    margin: 5px; 
+    font-weight: bold; 
+    border: 2px solid;
+    cursor: pointer;
+}
+
+.infoBoxHeading {
+    width: 250px; 
+    height: 50px; 
+    font-size: 180%;
+}
+
+.infoBoxDetail {
+    padding: 40px 0px 0px 0px;
+    width: 250px;
+    height: 110px;
+}
+
+
+.xtooltip 
+{
+    padding: 1px;
+    background: #F9F9F9;
+    border: 1px solid #EEE;
+    font-family: Verdana,Verdana,Geneva,sans-serif;
+    font-size: 10px; 
+    color: #000000; 
+    max-width: 200px;
+}
+
+.tooltipprompt
+{
+    color: darkGreen;
+}
+
+.menuspacertop {
+    display: none;
+    height: 50px;
+    
+}
+
+input
+{
+    max-width: 95%;
+}
+
+textarea
+{
+    max-width: 95%;
+}
+
+select
+{
+    max-width: 95%;
+}
+
+
+/*********************/
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+/* Styles */
+    /*header, footer { display: none; }*/
+    
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 and high pixel ratio devices ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}

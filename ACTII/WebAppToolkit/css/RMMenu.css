@@ -1,0 +1,93 @@
+/*
+RMMenu - Menu and Panel System for HTML Applications
+Copyright (C) 2009 by Gregory J Lamoree
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+*/  
+
+/*************************************************************************/
+/* Don't touch the following lines                                       */
+/*************************************************************************/
+.NavigationMenu { display: none;} 
+.NavigationMenu, .NavigationMenu ul { padding-left: 0px; cursor: default; margin-left: 0px;} 
+.NavigationMenu li { list-style-type: none;  margin: 0px;  position: relative; width: 100%; }                            
+.NavigationMenu li > ul { display: none; position: absolute; z-index: 10000; }   
+.NavigationMenu ul.CSStoShow { display: block; }                            
+.NavigationMenu li:hover > ul { display: block; }    
+.NavigationMenu a { display: block; text-decoration: none; }
+
+.NavigationMenu > li { width: 0px; }
+.NavigationMenu > li > span { display: none; }
+.NavigationMenu > li > ul { display: block; }
+
+.RMverticalMenu li > ul { top: 5%; left: 95%;}
+
+.RMhorizontalMenu li > ul { top: 95%; left: 5%; }
+.RMhorizontalMenu li > ul > li > ul { top: 10%; left: 95%; }
+.RMhorizontalMenu li { display: inline-block; }
+.xRMhorizontalMenuIE li { display: inline; }       /* Only Here for IE7- */
+
+.RMmobileMenu, .RMmobileMenu ul, .RMmobileMenu li > ul, .RMmobileMenu li, .RMmobileMenu a { width: 100% !important; margin: 0px !important; }
+.RMmobileMenu li > ul { position: relative; xpadding-left: 10% !important; xwidth: 90% !important; }
+.RMmobileMenu ul { border: 0px !important; font-size: 50%;}
+.RMmobileMenu ul { overflow-y: auto; }
+.RMmobileMenu li { padding-top: 10px; font-size: 200%; }
+
+.RMmobileMenu > li { width: auto; }
+.RMmobileMenu > li > span { display: block; }
+.RMmobileMenu > li > ul { display: none; }
+/* Smartphones (portrait) ----------- */
+/*
+@media only screen and (max-width : 320px) {
+    
+    header, footer { display: none; }
+    nav 
+    {
+        width: 100%;
+        height: auto;
+        float: none;
+        style-float: none;
+        css-float: none;
+        z-index: auto;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+    
+    .NavigationMenu li > ul { top: 0; left: 0; }
+    .NavigationMenu li > ul > li > ul { top: 0; left: 0; }
+    .NavigationMenu li { display: inline; }
+
+    .NavigationMenu, .NavigationMenu ul, .NavigationMenu li > ul, .NavigationMenu li, .NavigationMenu a { width: 100% !important; margin: 0px !important; }
+    .NavigationMenu li > ul { position: relative; xpadding-left: 10% !important; xwidth: 90% !important; }
+    .NavigationMenu ul { border: 0px !important; font-size: 50%;}
+    .NavigationMenu ul { overflow-y: auto; }
+    .NavigationMenu li { padding-top: 10px; font-size: 200%; }
+    
+}
+*/
+
+
+.panel {
+    display: none;
+}
+
+.paneltitle { display:block; }
+.titlespacer { display:none; }
+
+
+/*************************************************************************/
+

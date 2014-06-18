@@ -1,0 +1,599 @@
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+        <link type="image/png" rel="shortcut icon" href="custom/images/icons/logo.png">
+        <link type="image/png" rel="icon" href="custom/images/icons/logo.png">
+        <link type="image/png" rel="apple-touch-icon" href="custom/images/icons/logo.png">
+        
+        <script type="text/javascript" src="custom/js/dummydata.js"></script>
+        <script type="text/javascript" src="WebAppToolkit/js/InputMask.js"></script>
+        <script type="text/javascript" src="WebAppToolkit/js/baseline.js"></script>
+        <script type="text/javascript" src="WebAppToolkit/js/RMMenu.js"></script>
+
+		<link rel="stylesheet" href="WebAppToolkit/css/baseline.css" type="text/css">
+		<link rel="stylesheet" href="WebAppToolkit/css/RMMenu.css" type="text/css">
+        
+        <script type="text/javascript" src="custom/js/main.js"></script>
+		<link rel="stylesheet" href="custom/css/blue.css" type="text/css">
+		<link rel="stylesheet" href="custom/css/main.css" type="text/css">
+		<title>ACT II</title>
+	</head>
+	<body>
+	    <header>
+	        <div id="headerGraphic">
+	            <img src="custom/images/logosmall.png" style="float: right; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; ">
+	            <h1>ACT II</h1>
+            </div>
+        </header>
+        <div id="mainPage">
+            <nav>
+                <ul class="NavigationMenu" 
+                    orientation="vertical" 
+                    menustyle="float: right; width: 205px; border: 1px solid #000; background-color: #fff; margin-right: 10px; " 
+                    menuitemstyle="line-height: 38px; text-align: left; border-bottom: 1px solid #ddd; color: #777; " 
+                    menuitemhoverstyle="color: #fff; background-color: #0e3980; background-image: url(&quot;../../custom/images/blue/menuSelected.png&quot;); ">
+                    
+                    <li openpanel="home">&nbsp;&nbsp;Home</a></li>
+                    <li openpanel="contacts">&nbsp;&nbsp;Contacts</li>
+                    <li openpanel="groups">&nbsp;&nbsp;Groups</li>
+                    <li openpanel="speakerBureau">&nbsp;&nbsp;Speaker Bureau</li>
+                </ul>
+            </nav>
+            
+            <div id="home" class="panel">
+                <div style="text-align: center; font-size: 150%; font-weight: bold; padding-top: 1em; padding-bottom: 1em; ">
+                    Welcome to ACTII<br>Community and Economic Development's<br>Contact Management System
+                </div>
+                <div style="width: 100%; text-align: center; " id="navBlocks">
+                    <div class="customInline infoBox" classname="customInline infoBox" openpanel="contacts" style="cursor: pointer; ">
+                        <div class="customInline infoBoxHeading" classname="customInline infoBoxHeading">&nbsp;&nbsp;Contacts</div>
+                        <div class="customInline infoBoxDetail" classname="customInline infoBoxDetail">Create and manage your contacts from here.<br>&nbsp;<br>&nbsp;</div>
+                    </div>
+                    <div class="customInline infoBox" classname="customInline infoBox" openpanel="groups" style="cursor: pointer; ">
+                        <div class="customInline infoBoxHeading" classname="customInline infoBoxHeading">&nbsp;&nbsp;Groups</div>
+                        <div class="customInline infoBoxDetail" classname="customInline infoBoxDetail">Create and manage groups and fill them with contacts from here.<br>&nbsp;<br>&nbsp;</div>
+                    </div>
+                    <div class="customInline infoBox" classname="customInline infoBox" openpanel="speakerBureau" style="cursor: pointer; ">
+                        <div class="customInline infoBoxHeading" classname="customInline infoBoxHeading">&nbsp;&nbsp;Speaker Bureau</div>
+                        <div class="customInline infoBoxDetail" classname="customInline infoBoxDetail">Need to prepare for a meeting or wrap one up with valuable information, this is the place to do it.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel" id="contacts" style="display: none; ">
+                <h3>Contacts</h3>
+                <fieldset>
+                    <form>
+                        <input type="text" id="contactsSearchString" style="width: 200px; margin-right: 10px; ">
+                        <input type="button" class="formbutton" search="contactsSearchResultString" searchresults="contactsSearchResults" value="Search" style="margin-right: 10px; ">
+                        <input type="button" class="formbutton" openpanel="contactDetail" value="Add New" style="cursor: pointer; ">
+                        <div class="pageMessage" classname="pageMessage" style="display: none; "></div>
+                    </form>
+                </fieldset>
+                <div id="contactsSearchResults">
+                    <span id="contactsSearchResultsLine" class="template">
+                        <div id="contactsItem[exact ID]" class="resultLine">
+                            <span loadform="contactDetail" dataurl="contactsDetailResultString" datakey="[exact ID]">
+                                <div class="key" style="width: 11em; ">[lastName], [firstName]</div>
+                                <div class="detail" style="width: 7em; ">[phone]</div>
+                                <div class="detail" style="width: 13em; ">[addr1]<br>[addr2]</div>
+                                <div class="detail" style="width: 13em; ">[city], [state] [zip]<br>&nbsp;</div>
+                            </span>
+                            <div class="detail">
+                                <a href="tel:[num phone]" target="_new" style="margin-left: 10px; "><img src="custom/images/icons/aPhone.png" style="margin-right: 10px; "></a>
+                                <a href="http://maps.google.com?daddr=[uri addr1]+[uri addr2]+[uri city]+[uri state]+[uri zip]" target="_new" style="margin-left: 10px; "><img src="custom/images/icons/aMap.png"></a>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="panel" id="contactDetail">
+                <fieldset>
+                    <form id="contactDetailForm">
+                        <h3>Contact Detail
+                            <input type="button" class="formbutton" submitto="http://..." value="Save" style="margin-left: 10px; ">
+                            <input type="button" class="formbutton" submitto="http://..." value="Delete" style="margin-left: 10px; ">
+                        </h3>
+                        <div class="pageMessage" style="display: none; "></div>
+                        <input type="hidden" id="contactID" value="">
+                        <div class="oneLine sectionHeader"></div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">First Name:&nbsp;<br>
+                                <input type="text" id="firstName" mask="[required][character 1 25]">
+                            </div>
+                            <div class="fieldGroup">MI:&nbsp;<br>
+                                <input type="text" id="MI" mask="C">
+                            </div>
+                            <div class="fieldGroup">Last Name:&nbsp;<br>
+                                <input type="text" id="lastName" mask="[required][character 1 30]">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Salutation:&nbsp;<br>
+                                <input type="text" id="salutation" mask="[character 1 30]">
+                            </div>
+                            <div class="fieldGroup">Title:&nbsp;<br>
+                                <input type="text" id="title" mask="[character 1 40]">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Address:&nbsp;<br>
+                                <input type="text" id="addr1" mask="[character 1 40]">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Address:&nbsp;<br>
+                                <input type="text" id="addr2" mask="[character 1 40]">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">City:&nbsp;<br>
+                                <input type="text" id="city" mask="[character 1 30]">
+                            </div>
+                            <div class="fieldGroup">State:&nbsp;<br>
+                                <input type="text" id="state" mask="AA">
+                            </div>
+                            <div class="fieldGroup">Zip:&nbsp;<br>
+                                <input type="text" id="zip" mask="99999-0000">
+                            </div>
+                            <div class="fieldGroup">Country:&nbsp;<br>
+                                <input type="text" id="country" mask="[character 1 30]">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Phone:&nbsp;<br>
+                                <input type="text" id="phone" mask="(999) 999-9999">
+                            </div>
+                            <div class="fieldGroup">Mobile Phone:&nbsp;<br>
+                                <input type="text" id="mobilePhone" mask="(999) 999-9999">
+                            </div>
+                            <div class="fieldGroup">Fax:&nbsp;<br>
+                                <input type="text" id="fax" mask="(999) 999-9999">
+                            </div>
+                            <div class="fieldGroup">Alt Phone:&nbsp;<br>
+                                <input type="text" id="altPhone" mask="(999) 999-9999">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">E-Mail:&nbsp;<br>
+                                <input type="text" id="email" mask="[character 1 80]">
+                            </div>
+                            <div class="fieldGroup">E-Mail 2:&nbsp;<br>
+                                <input type="text" id="email2" mask="[character 1 80]">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Company:&nbsp;<br>
+                                <input type="text" id="company" mask="[character 1 40]">
+                            </div>
+                            <div class="fieldGroup">Website:&nbsp;<br>
+                                <input type="text" id="website" mask="[character 1 256]">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">PPL Account Manager:&nbsp;<br>
+                                <select id="contactPplAcctMgrID">
+                                    <option value=""></option>
+                                    <option value="1">Mat</option>
+                                    <option value="2">Susie</option>
+                                    <option value="3">Paul</option>
+                                    <option value="4">Christene</option>
+                                    <option value="5">Frank</option>
+                                </select>
+                            </div>
+                            <div class="fieldGroup">ID/Status:&nbsp;<br>
+                                <select id="idStatusID">
+                                    <option value=""></option>
+                                    <option value="1">Status 1</option>
+                                    <option value="2">Status 2</option>
+                                    <option value="3">Status 3</option>
+                                    <option value="4">Status 4</option>
+                                    <option value="5">Status 5</option>
+                                </select>
+                            </div>
+                            <div class="fieldGroup">Referred By:&nbsp;<br>
+                                <select id="referredByID">
+                                    <option value=""></option>
+                                    <option value="1">Peter</option>
+                                    <option value="2">Paul</option>
+                                    <option value="3">Mary</option>
+                                    <option value="4">Ringo</option>
+                                    <option value="5">Star</option>
+                                </select>
+                            </div>
+                            <div class="fieldGroup">Mail Codes:&nbsp;<br>
+                                <select id="mailCodesID">
+                                    <option value=""></option>
+                                    <option value="1">Priority</option>
+                                    <option value="2">Overnight</option>
+                                    <option value="3">First Class</option>
+                                    <option value="4">Second Class</option>
+                                    <option value="5">Pack Mule</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Pertinent Notes:&nbsp;<br>
+                                <textarea id="pertinentNotes" cols="38" rows="14"></textarea>
+                            </div>
+                            <div class="fieldGroup">Audit Data:&nbsp;<br>
+                                <div class="fieldGroup subGroupright">
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">Create Date:&nbsp;
+                                            <input type="text" id="createDate" mask="[character 1 10]" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">Last Edited By:&nbsp;
+                                            <input type="text" id="lastEditedBy" mask="[character 1 10]" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">Edit Date:&nbsp;
+                                            <input type="text" id="editDate" mask="[character 1 10]" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">Last E-Mail:&nbsp;
+                                            <input type="text" id="lastEMail" mask="[character 1 10]" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">Letter Date:&nbsp;
+                                            <input type="text" id="letterDate" mask="[character 1 10]" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="oneLine">
+                                        <div class="fieldGroup" classname="fieldGroup">Last Reach:&nbsp;
+                                            <input type="text" id="lastReach" mask="[character 1 10]" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">Last Attempt:&nbsp;
+                                            <input type="text" id="lastAttempt" mask="[character 1 10]" readonly="readonly">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+            
+            <div class="panel" id="groups">
+                <h3>Groups</h3>
+                <fieldset>
+                    <form>
+                        <input type="text" id="groupsSearchString" style="width: 200px; margin-right: 10px; ">
+                        <input type="button" class="formbutton" search="groupsSearchResultString" searchresultstree="groupsSearchResults" value="Search" style="margin-right: 10px; ">
+                        <input type="button" class="formbutton" openpanel="groupsDetail" value="Add New" style="cursor: pointer; ">
+                        <div class="pageMessage" style="display: none; "></div>
+                    </form>
+                </fieldset>
+                <div id="groupsSearchResults" key="ID" parentkey="parentID">
+                    <span class="template">
+                        <span id="groups[exact ID]">
+                            <span loadform="groupsDetail" dataurl="groupsDetailResultString" datakey="[exact ID]">[name]</span>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="panel" id="groupMembersSearch">
+                <h3>Add Group Members</h3>
+                <fieldset>
+                    <form>
+                        <input type="text" id="groupMembersSearchSearchString" style="width: 200px; margin-right: 10px; ">
+                        <input type="button" class="formbutton" search="groupMembersSearchSearchResultString" searchresults="groupMembersSearchSearchResults" value="Search" style="margin-right: 10px; ">
+                        <input type="button" class="formbutton" moveelementsfrom="groupMembersSearch" addelementsto="groupMembersSearchResults" value="Add Selected" style="margin-right: 10px; ">
+                        <input type="button" class="formbutton" cancelto="groupsDetail" value="Cancel">
+                        <div class="pageMessage" style="display: none; "></div>
+                    </form>
+                </fieldset>
+                <div id="groupMembersSearchSearchResults">
+                    <span id="groupMembersSearchSearchResultsLine" class="template">
+                        <div id="groupMembersSearchItem[exact ID]" class="resultLine">
+                            <span>
+                                <div class="detail">
+                                    <input type="checkbox" value="[exact ID]" style="margin-right: 5px; ">
+                                    <input type="hidden" value="[exact ID]" id="groupMembersSearch[exact ID]">
+                                </div>
+                                <div class="key" style="width: 11em; ">[lastName], [firstName]</div>
+                                <div class="detail" style="width: 7em; ">[phone]</div>
+                                <div class="detail" style="width: 13em; ">[addr1]<br>[addr2]</div>
+                                <div class="detail" style="width: 13em; ">[city], [state] [zip]<br>&nbsp;</div>
+                            </span>
+                            <div class="detail">
+                                <a href="tel:[num phone]" target="_new" style="margin-left: 10px; "><img src="custom/images/icons/aPhone.png" style="margin-right: 10px; "></a>
+                                <a href="http://maps.google.com?daddr=[uri addr1]+[uri addr2]+[uri city]+[uri state]+[uri zip]" target="_new" style="margin-left: 10px; "><img src="custom/images/icons/aMap.png"></a>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="panel" id="groupsDetail" style="display: none; ">
+                <fieldset>
+                    <form id="groupsDetailForm">
+                        <h3>Group Detail
+                            <input type="button" class="formbutton" submitto="http://..." value="Save" style="margin-left: 10px; ">
+                            <input type="button" class="formbutton" classname="formbutton" submitto="http://..." value="Delete" style="margin-left: 10px; ">
+                        </h3>
+                        <div class="pageMessage" style="display: none; "></div>
+                        <input type="hidden" id="groupID" value="">
+                        <div class="oneLine sectionHeader"></div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Parent Group:&nbsp;<br>
+                                <select id="groupParent">
+                                    <option value=""></option>
+                                    <option value="1">Christmas List</option>
+                                    <option value="2">MHerron</option>
+                                    <option value="3">Christmas Cards</option>
+                                    <option value="4">Luserne County</option>
+                                    <option value="5">Partners in Education</option>
+                                    <option value="6">Board of Directors</option>
+                                    <option value="7">Executive Committee</option>
+                                    <option value="8">Schuylkill County</option>
+                                </select>
+                            </div>
+                            <div class="fieldGroup">Name:&nbsp;<br>
+                                <input type="text" id="groupName" mask="[character 1 40]">
+                            </div>
+                            <div class="fieldGroup">Description:&nbsp;<br>
+                                <input type="text" id="groupDescription" mask="[character 1 40]">
+                            </div>
+                        </div>
+                        <div class="oneLine sectionHeader">Group Members</div>
+                        <div class="customInline">
+                            <div class="customInline">&nbsp;<br>
+                                <div class="oneLine">
+                                    <input type="button" class="formbutton" removedetails="groupMembers" style="margin-right: 10px; " value="Remove Selected">
+                                    <input type="button" class="formbutton" openpanel="groupMembersSearch" value="Add" style="cursor: pointer; ">
+                                </div>
+                                <div id="groupMembers" searchurl="" searchstring="groupID">
+                                    <div id="groupMembersSearchResults">
+                                        <span id="groupMembersSearchResultsLine" class="template">
+                                            <div id="groupMembersItem[exact ID]" class="resultLine">
+                                                <span>
+                                                    <div class="detail">
+                                                        <input type="checkbox" value="[exact ID]" style="margin-right: 5px; ">
+                                                        <input type="hidden" value="[exact ID]" id="groupMembers[exact ID]">
+                                                    </div>
+                                                    <div class="key" style="width: 11em; ">[lastName], [firstName]</div>
+                                                    <div class="detail" classname="detail" style="width: 7em; ">[phone]</div>
+                                                    <div class="detail" classname="detail" style="width: 13em; ">[addr1]<br>[addr2]</div>
+                                                    <div class="detail" classname="detail" style="width: 13em; ">[city], [state] [zip]<br>&nbsp;</div>
+                                                </span>
+                                                <div class="detail">
+                                                    <a href="tel:[num phone]" target="_new" style="margin-left: 10px; "><img src="custom/images/icons/aPhone.png" style="margin-right: 10px; "></a>
+                                                    <a href="http://maps.google.com?daddr=[uri addr1]+[uri addr2]+[uri city]+[uri state]+[uri zip]" target="_new" style="margin-left: 10px; "><img src="custom/images/icons/aMap.png"></a>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+            
+            <div class="panel" id="speakerBureau" style="display: none; ">
+                <h3>Speaker Bureau</h3>
+                <fieldset>
+                    <form>
+                        <input type="text" id="speakerBureauSearchString" style="width: 200px; margin-right: 10px; ">
+                        <input type="button" class="formbutton" search="speakerBureauSearchResultString" searchresults="speakerBureauSearchResults" value="Search" style="margin-right: 10px; ">
+                        <input type="button" class="formbutton" openpanel="speakerBureauDetail" value="Add New" style="cursor: pointer; ">
+                        <div class="pageMessage" style="display: none; "></div>
+                    </form>
+                </fieldset>
+                <div id="speakerBureauSearchResults">
+                    <span id="speakerBureauSearchResultsLine" class="template">
+                        <div id="speakerBureauItem[exact sbID]" class="resultLine">
+                            <span loadform="speakerBureauDetail" dataurl="speakerBureauDetailResultString" datakey="[exact sbID]">
+                                <div class="key" style="width: 11em; ">[pplAcctMgr]</div>
+                                <div class="detail" style="width: 11em; ">[nameOfOrg]<br>[orgContact]</div>
+                                <div class="detail" style="width: 7em; ">[contactPhone]</div>
+                                <div class="detail" style="width: 10em; ">[scheduledDateTimeOfPresentation]</div>
+                                <div class="detail" style="width: 13em; ">[contactAddr1]<br>[contactAddr2]<br>[contactCity], [contactState] [contactZip]</div>
+                            </span>
+                            <div class="detail">
+                                <a href="tel:[num contactPhone]" target="_new" style="margin-left: 10px; "><img src="custom/images/icons/aPhone.png" style="margin-right: 10px; "></a>
+                                <a href="http://maps.google.com?daddr=[uri contactAddr1]+[uri contactAddr2]+[uri contactCity]+[uri contactState]+[uri contactZip]" target="_new" style="margin-left: 10px; "><img src="custom/images/icons/aMap.png"></a>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="panel" id="speakerBureauDetail">
+                <fieldset>
+                    <form id="speakerBureauDetailForm">
+                        <h3>Speaker Bureau Detail
+                            <input type="button" class="formbutton" submitto="http://..." value="Save" style="margin-left: 10px; ">
+                            <input type="button" class="formbutton" submitto="http://..." value="Delete" style="margin-left: 10px; ">
+                        </h3>
+                        <div class="pageMessage" style="display: none; "></div>
+                        <input type="hidden" id="sbID" value="">
+                        <div class="oneLine sectionHeader"></div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">PPL Account<br>Manager:&nbsp;<br>
+                                <select id="SBpplAcctMgrID">
+                                    <option value=""></option>
+                                    <option value="1">Mat</option>
+                                    <option value="2">Susie</option>
+                                    <option value="3">Paul</option>
+                                    <option value="4">Christene</option>
+                                    <option value="5">Frank</option>
+                                </select>
+                            </div>
+                            <div class="fieldGroup"><br>Name of Org:&nbsp;<br>
+                                <input type="text" id="nameOfOrg" mask="[character 1 40]">
+                            </div>
+                            <div class="fieldGroup">Scheduled Date/Time<br>of Presentation:&nbsp;<br>
+                                <input type="text" id="scheduledDateTimeOfPresentation" mask="09/09/9999 00:00am">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup"><br>Location of Presentation:&nbsp;<br>
+                                <input type="text" id="locationOfPresentation" mask="[character 1 30]">
+                            </div>
+                            <div class="fieldGroup">Length of<br>Presentation:&nbsp;<br>
+                                <input type="text" id="lengthOfPresentation" mask="09:00">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup"><br>Speaker Name:&nbsp;<br>
+                                <input type="text" id="speakerName" mask="[character 1 30]">
+                            </div>
+                            <div class="fieldGroup">Speaker<br>Phone Number:&nbsp;<br>
+                                <input type="text" id="speakerPhoneNumber" mask="(999) 999-9999 x:00000">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup"><br>Status:&nbsp;<br>
+                                <select id="status">
+                                    <option value=""></option>
+                                    <option value="1">Status 1</option>
+                                    <option value="2">Status 2</option>
+                                    <option value="3">Status 3</option>
+                                    <option value="4">Status 4</option>
+                                    <option value="5">Status 5</option>
+                                </select>
+                            </div>
+                            <div class="fieldGroup">Anticipated<br>Attendees:&nbsp;<br>
+                                <input type="text" id="anticipatedAttendees" mask="[numeric 1 4]">
+                            </div>
+                            <div class="fieldGroup">Actual<br>Attendees:&nbsp;<br>
+                                <input type="text" id="actualAttendees" mask="[numeric 1 4]">
+                            </div>
+                            <div class="fieldGroup"><br><br>Emailed Scanned SB Form:&nbsp;
+                                <input type="checkbox" id="emailedScannedSBForm" value="">
+                            </div>
+                        </div>
+                        <div class="oneLine sectionHeader">Items Needed</div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">&nbsp;<br>
+                                <div class="fieldGroup subGroupleft">
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">
+                                            <input type="checkbox" id="needLaptop" value="1"><span>&nbsp;Laptop</span>
+                                        </div>
+                                    </div>
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">
+                                            <input type="checkbox" id="needProxima" value="1"><span>&nbsp;Proxima</span>
+                                        </div>
+                                    </div>
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">
+                                            <input type="checkbox" id="needPPTHandouts" value="1"><span>&nbsp;PPT Handouts</span>
+                                        </div>
+                                    </div>
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">
+                                            <input type="checkbox" id="needFlipTopPresentation" value="1"><span>&nbsp;Flip Top Presentation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fieldGroup">&nbsp;<br>
+                                <div class="fieldGroup subGroupleft">
+                                    <div class="oneLine">
+                                        <div class="fieldGroup">CFL Bulbs:&nbsp;<br>
+                                            <input type="text" id="cFLBulbsNeeded" mask="9999">
+                                        </div>
+                                        <div class="fieldGroup">AV Materials:&nbsp;<br>
+                                            <textarea id="aVMaterialsNeeded" cols="25" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Bulbs Sent:&nbsp;<br>
+                                <input type="text" id="bulbsSent" mask="9999">
+                            </div>
+                        </div>
+                        <div class="oneLine sectionHeader">Contact Info</div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Name:&nbsp;<br>
+                                <input type="text" id="orgContact" mask="[character 1 30]">
+                            </div>
+                            <div class="fieldGroup">Phone:&nbsp;<br>
+                                <input type="text" id="contactPhone" mask="(999) 999-9999 x:00000">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Address:&nbsp;<br>
+                                <input type="text" id="contactAddr1" mask="[character 1 40]">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">Address:&nbsp;<br>
+                                <input type="text" id="contactAddr2" mask="[character 1 40]">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup">City:&nbsp;<br>
+                                <input type="text" id="contactCity" mask="[character 1 30]">
+                            </div>
+                            <div class="fieldGroup">State:&nbsp;<br>
+                                <input type="text" id="contactState" mask="AA">
+                            </div>
+                            <div class="fieldGroup">Zip:&nbsp;<br>
+                                <input type="text" id="contactZip" mask="99999-0000">
+                            </div>
+                        </div>
+                        <div class="oneLine sectionHeader">Results</div>
+                        <div class="oneLine">
+                            <div class="fieldGroup"><br>Notes for Speaker:&nbsp;<br>
+                                <textarea id="notesForSpeaker" cols="38" rows="5"></textarea>
+                            </div>
+                            <div class="fieldGroup">Date Presentation<br>Complete:&nbsp;<br>
+                                <input type="text" id="datePresentationComplete" mask="09/09/9999">
+                            </div>
+                            <div class="fieldGroup">Equip Due<br>Back:&nbsp;<br>
+                                <input type="text" id="equipDueBack" mask="09/09/9999">
+                            </div>
+                            <div class="fieldGroup"><br><br>Equip Returned:&nbsp;
+                                <input type="checkbox" id="equipReturned" value="1">
+                            </div>
+                        </div>
+                        <div class="oneLine">
+                            <div class="fieldGroup"><br>Difficult Questions:&nbsp;<br>
+                                <textarea id="difficultQuestions" cols="38" rows="5"></textarea>
+                            </div>
+                            <div class="fieldGroup">Presentation Subject:&nbsp;<br>
+                                <input type="text" id="presentationSubject" mask="[character 1 40]">
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </body>
+</html>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    

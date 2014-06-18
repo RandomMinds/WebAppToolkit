@@ -1,0 +1,56 @@
+﻿/*
+toolitp - tooltip code for HTML applications.
+Copyright (C) 2009 by Gregory J Lamoree
+
+This file is part of the Web Application Toolkit. 
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/  
+.tooltipprompt {
+	border-bottom: 1px dotted #000000; 
+	color: #000000; 
+	outline: none;
+	cursor: help; 
+	text-decoration: none;
+	position: relative;
+}
+#tooltip {
+	border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+	font-family: Calibri, Tahoma, Geneva, sans-serif;
+	xposition: absolute; xleft: 1em; xtop: 2em; xz-index: 99;
+	xmargin-left: 0; xwidth: 250px;
+	padding: 15px;
+	max-width: 300px;
+}
+.tooltipicon {
+	border: 0; margin: -15px 0 0 -42px;
+	float: left; position: absolute;
+}
+#tooltip em {
+	font-family: Candara, Tahoma, Geneva, sans-serif; font-size: 1.2em; font-weight: bold;
+	display: block; padding: 0.2em 0 0.6em 16px;
+}
+.ttclassic { padding: 0.8em 1em; }
+.ttcustom { padding: 0.5em 0.8em 0.8em 2em; }
+.tthelp > .tooltipicon { margin-top: -20px; }
+.ttinfo > .tooltipicon { margin-top: -20px; }
+.ttcritical > .tooltipicon { margin-top: -20px; }
+* html a:hover { background: transparent; }
+
+.ttclassic {background: #FCF1B8; border: 1px solid #FCCEAC; }
+.ttcritical { background: #FFCCAA; border: 1px solid #FF3334;	}
+.tthelp { background: #9FDAEE; border: 1px solid #2BB0D7;	}
+.ttinfo { background: #9EFE9E; border: 1px solid #176117;	}
+.ttwarning { background: #FFFFAA; border: 1px solid #FFAD33; }
